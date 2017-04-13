@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsMisterCocktail</title>
+    <title><%= yield(:page_title).blank? ? "Mister Cocktails" : yield(:page_title) %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= render "shared/navbar" %>
     <%= yield %>
   </body>
 </html>

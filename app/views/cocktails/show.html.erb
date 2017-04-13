@@ -1,0 +1,22 @@
+<% content_for :page_title do %>
+  <%= @cocktail.name %> - MisterCocktail
+<% end %>
+
+<div class="container">
+  <h1><%= @cocktail.name %></h1>
+
+
+  <hr>
+
+  <% @cocktail.doses.each do |dose| %>
+    <p>
+     <strong><%= dose.ingredient.name %>: </strong><%= dose.description %>
+    </p>
+  <% end %>
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.association :ingredient %>
+    <%= f.input :description %>
+    <%= f.submit %>
+  <% end %>
+</div>
