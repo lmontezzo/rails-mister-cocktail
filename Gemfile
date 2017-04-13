@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Prepare for Eroku
+ruby '2.3.3'
 
 # Gemfile frontend setup
 gem 'bootstrap-sass'
