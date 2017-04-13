@@ -3,23 +3,23 @@
 <% end %>
 
 <div class="container">
-  <h1><%= @cocktail.name %></h1>
-
-
-  <hr>
-
-  <% @cocktail.doses.each do |dose| %>
-    <p>
-     <strong><%= dose.ingredient.name %>: </strong><%= dose.description %>
-    </p>
-  <% end %>
-
-  <hr>
-
-  <h3>Add <%= @cocktail.name %>'s ingredients:</h3>
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.association :ingredient %>
-    <%= f.input :description %>
-    <%= f.submit %>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h1><%= @cocktail.name %></h1>
+        <hr>
+        <% @cocktail.doses.each do |dose| %>
+          <p>
+           <strong><%= dose.ingredient.name %>: </strong><%= dose.description %>
+          </p>
+        <% end %>
+        <hr>
+        <h3>Add <%= @cocktail.name %>'s ingredients:</h3>
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.association :ingredient %>
+          <%= f.input :description %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
