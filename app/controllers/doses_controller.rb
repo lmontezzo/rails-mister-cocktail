@@ -11,6 +11,11 @@ class DosesController < ApplicationController
     end
   end
 
+  # def edit
+  #   @cocktail = Cocktail.find(params[:cocktail_id])
+  #   @dose = Dose.find(params[:id])
+  # end
+
   private
 
   def dose_params

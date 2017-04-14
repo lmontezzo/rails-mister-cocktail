@@ -5,7 +5,9 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
-      <h1><%= @cocktail.name %></h1>
+      <h1><%= @cocktail.name %></h1><%= link_to "Edit Cocktail", edit_cocktail_path(@cocktail) %> <%= link_to "Delete Cocktail", cocktail_path(@cocktail),
+      method: :delete,
+      data: { confirm: "Are you absolutly sure?" } %>
         <hr>
         <% @cocktail.doses.each do |dose| %>
           <p>

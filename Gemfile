@@ -8,6 +8,8 @@ end
 # Prepare for Eroku
 ruby '2.3.3'
 
+gem 'figaro'
+
 # Gemfile frontend setup
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
