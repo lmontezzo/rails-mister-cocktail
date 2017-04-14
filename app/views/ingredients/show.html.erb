@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <h1><%= @ingredient.name %></h1><%= link_to "Edit ingredient", edit_ingredient_path(@ingredient) %> <%= link_to "Delete ingredient", ingredient_path(@ingredient),
       method: :delete,
       data: { confirm: "Are you absolutly sure?" } %>
