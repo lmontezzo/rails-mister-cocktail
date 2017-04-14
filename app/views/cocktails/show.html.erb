@@ -9,6 +9,10 @@
       method: :delete,
       data: { confirm: "Are you absolutly sure?" } %>
         <hr>
+        <% @cocktail.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <% end %>
+        <hr>
         <% @cocktail.doses.each do |dose| %>
           <p>
            <strong><%= dose.ingredient.name %>: </strong><%= dose.description %>
@@ -25,3 +29,5 @@
     </div>
   </div>
 </div>
+
+
