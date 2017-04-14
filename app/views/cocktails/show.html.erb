@@ -15,7 +15,7 @@
         <hr>
         <% @cocktail.doses.each do |dose| %>
           <p>
-           <strong><%= dose.ingredient.name %>: </strong><%= dose.description %>
+           <strong><%= link_to dose.ingredient.name, ingredient_path(dose.ingredient) %>: </strong><%= dose.description %>
           </p>
         <% end %>
         <hr>
@@ -29,5 +29,6 @@
     </div>
   </div>
 </div>
+
 
 

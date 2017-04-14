@@ -1,0 +1,35 @@
+<% content_for :page_title do %>
+  <%= @ingredient.name %> - MisterCocktail
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h1><%= @ingredient.name %></h1><%= link_to "Edit ingredient", edit_ingredient_path(@ingredient) %> <%= link_to "Delete ingredient", ingredient_path(@ingredient),
+      method: :delete,
+      data: { confirm: "Are you absolutly sure?" } %>
+        <hr>
+        <% @ingredient.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <% end %>
+    </div>
+  </div>
+  <hr>
+  <h3 class="text-center">Find some cocktails done with <%= @ingredient.name %>:</h3>
+  <div class="row">
+    <% @ingredient.doses.each do |dose| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path dose.cocktail.photos.first.path, height: 300, width: 400, crop: :fill %>')">
+        <div class="card-description">
+          <h2><%= dose.cocktail.name %></h2>
+        </div>
+        <%= link_to "", cocktail_path(dose.cocktail), class: "card-link" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+

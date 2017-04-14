@@ -1,0 +1,39 @@
+
+<div class="container">
+<%= link_to "Add ingredient", new_ingredient_path %>
+  <div class="row text-center">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h1>My Ingredients list</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <% @ingredients.each do |ingredient| %>
+      <div class="col-xs-12 col-sm-4">
+        <% if  ingredient.photos.first.nil?%>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.piscotrail.com/sf/media/2012/02/pisco-sour-mise-en-place.jpg');">
+            <div class="card-description">
+              <h2><%= ingredient.name %></h2>
+            </div>
+            <%= link_to "", ingredient_path(ingredient), class: "card-link" %>
+          </div>
+        <% else %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path ingredient.photos.first.path, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-description">
+              <h2><%= ingredient.name %></h2>
+            </div>
+            <%= link_to "", ingredient_path(ingredient), class: "card-link" %>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

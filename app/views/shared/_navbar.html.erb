@@ -14,6 +14,10 @@
         <i class="fa fa-search"></i>
       </button>
     </form> -->
+    <%= link_to "Cocktails", cocktails_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <%= link_to "Ingredients", ingredients_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
 
     <!-- Notification -->
 <!--     <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
@@ -40,7 +44,7 @@
           </li>
         </ul>
       </div>
-    </div> -->
+    </div>
 
     <!-- Button (call-to-action) -->
     <%= link_to t(".top_call_to_action", default: "New Cocktail"), new_cocktail_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
